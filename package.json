@@ -1,0 +1,25 @@
+{
+  "name": "vinovr-aframe",
+  "version": "1.0.0",
+  "description": "An interactive experience for wine lovers",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm runbuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graceyangyxt/VinoVR-Aframe.git"
+  },
+  "author": "Giselle Raposo, Grace Yang, Luis Apuango, Sean Weber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/graceyangyxt/VinoVR-Aframe/issues"
+  },
+  "homepage": "https://github.com/graceyangyxt/VinoVR-Aframe#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "heroku": "^7.56.0",
+    "nodemon": "^2.0.9",
+    "package.json": "^2.0.1"
+  }
+}
