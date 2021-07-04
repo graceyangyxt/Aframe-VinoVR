@@ -1,6 +1,5 @@
 console.log("server started");
 
-var nodemon = require('nodemon');
 var express = require('express');
 var app = express();
 var serv = require('http').Server(app);

@@ -20,6 +20,7 @@
     "express": "^4.17.1",
     "heroku": "^7.56.0",
     "nodemon": "^2.0.9",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "yarn": "^1.22.10"
   }
 }
