@@ -22,7 +22,6 @@
     "heroku": "^7.56.0",
     "if-env": "^1.0.4",
     "nodemon": "^2.0.9",
-    "package.json": "^2.0.1",
-    "yarn": "^1.22.10"
+    "package.json": "^2.0.1"
   }
 }
