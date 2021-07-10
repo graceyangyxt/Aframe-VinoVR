@@ -7,6 +7,7 @@
     <title>VinoVR | AFrame</title>
 
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="client/src/index.js"></script>
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -32,7 +33,7 @@
         <a-light type="ambient" color="#666" position="" rotation="" scale="" visible="" light=""></a-light>
         <a-light type="point" intensity="" position="-1 4 -4" rotation="" scale="" visible="" light=""></a-light>
       
-        <a-entity id="camera" camera position="3.124 0.7 -3.945" rotation="0 -90" speed="0.1" look-controls wasd-controls="fly: true; acceleration: 10;"><a-cursor position="0 0 -0.1" material="color: white;" raycaster="far: 20; interval: 1000; objects: .clickable"></a-cursor></a-entity>
+        <a-entity id="camera" camera position="3.124 0.7 -3.945" rotation="0 -90" speed="0.1" look-controls wasd-controls="fly: true; acceleration: 10;" collider-check><a-cursor position="0 0 -0.01" material="color: white;" raycaster="far: 20; interval: 1000; objects: .clickable"></a-cursor></a-entity>
     </a-scene>
 </body>
     <script src="client/src/music.js"></script>

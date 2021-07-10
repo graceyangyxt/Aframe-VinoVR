@@ -22,6 +22,8 @@ function next() {
 
     music.src = files[i];
 
+    console.log('Next song is playing!');
+
     playSound();
 };
 
@@ -41,7 +43,7 @@ button.addEventListener('click', function() {
     console.log('Play/Pause was clicked!');
 });
 
-nextBtn.addEventListener('click', next);
 nextBtn.addEventListener('click', function() {
     console.log('Next was clicked!');
 });
+nextBtn.addEventListener('click', next);
