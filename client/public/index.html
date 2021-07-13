@@ -7,10 +7,14 @@
     <title>VinoVR | AFrame</title>
 
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <a-scene class="fullscreen" loading-screen="dotsColor: purple; backgroundColor: black" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
+    <a-scene physics="gravity:-9.8" class="fullscreen" loading-screen="dotsColor: purple; backgroundColor: black" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="" stats>
+
         <a-assets>
                 <img id="sky" src="client/src/images/sunset_360_preview.jpg">
                 <img id="grass" src="client/src/images/grass.jpg">
@@ -18,13 +22,26 @@
                 <audio id="heavn-mp3" src="client/src/audio/heavn-jamila-woods.mp3" preload="auto"></audio>
                 <a-asset-item id="villa-model" src="client/src/3D-models/villa/villa-obj.obj"></a-asset-item>
                 <a-asset-item id="villa-mtl" src="client/src/3D-models/villa/villa-mtl.mtl"></a-asset-item>
+                <a-asset-item id="test-wine-bottle-model" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.obj"></a-asset-item>
+                <a-asset-item id="test-wine-bottle-mtl" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.mtl"></a-asset-item>
+                <a-asset-item id="dessert-tray-model" src="client/src/3D-models/dessert_tray/dessert_tray.obj"></a-asset-item>
+                <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item>
+
         </a-assets>
 
         <a-sky id="skybox" src="#sky" radius="30" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
       
-        <a-entity id="ground" geometry="primitive:plane" material="src:#grass; repeat: 150 150" rotation="-90 0 0" scale="100 100"></a-entity>
+        <a-entity id="ground" geometry="primitive:plane" material="src:#grass; repeat: 150 150" rotation="-90 0 0" scale="100 100" static-body></a-entity>
       
-        <a-entity id="villa" obj-model="obj: #villa-model; mtl: #villa-mtl" scale="0.25 0.25 0.25 0.25" position="0 0.36 0" rotation="-90"></a-entity>
+        <a-entity static-body>
+                <a-entity id="villa" obj-model="obj: #villa-model; mtl: #villa-mtl" scale="0.25 0.25 0.25 0.25" position="0 0.36 0" rotation="-90" static-body></a-entity>
+        </a-entity>
+        
+        <a-entity dynamic-body="shape: cylinder; cylinderAxis: y; mass: 5" position="4.313 0.513 -3.912">
+                <a-entity id="test-wine-bottle" obj-model="obj: #test-wine-bottle-model; mtl: #test-wine-bottle-mtl" scale="0.4 0.4 0.4 0.4" rotation="0" ></a-entity>
+        </a-entity>
+      
+        <a-entity id="dessert-tray" obj-model="obj: #dessert-tray-model; mtl: #dessert-tray-mtl" scale="0.4 0.4 0.4 0.4" position="4.321 0.299 -4.000" rotation="0" dynamic-body></a-entity>
       
         <a-entity id="playBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.945" rotation="-5 -90" scale="0.15 0.15 0.15"><audio></audio></a-entity>
         <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.5" rotation="-5 -90" scale="0.15 0.15 0.15"><audio></audio></a-entity>
