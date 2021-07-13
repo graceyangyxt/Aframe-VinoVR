@@ -2,7 +2,7 @@ const button = document.querySelector('#playBtn');
 const nextBtn = document.querySelector('#nextBtn');
 
 //Playlist array
-var files = [
+var chill = [
     "client/src/audio/heavn-jamila-woods.mp3",
     "client/src/audio/pink+white.mp3"
 ];
@@ -11,7 +11,7 @@ var i = 0;
 
 var music = document.querySelector("#playBtn audio");
 
-music.src = files[i];
+music.src = chill[i];
 
 function next() {
     if (i === files.length - 1) {
@@ -20,7 +20,7 @@ function next() {
         i++;
     }
 
-    music.src = files[i];
+    music.src = chill[i];
 
     console.log('Next song is playing!');
 
