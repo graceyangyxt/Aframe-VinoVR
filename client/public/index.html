@@ -30,25 +30,26 @@
         </a-assets>
 
         <a-sky id="skybox" src="#sky" radius="30" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
-      
+        <!--try to figure out the physics, but not yet-->
         <a-entity id="ground" geometry="primitive:plane" material="src:#grass; repeat: 150 150" rotation="-90 0 0" scale="100 100" static-body></a-entity>
         <a-entity static-body>
                 <a-entity id="villa" obj-model="obj: #villa-model; mtl: #villa-mtl" scale="0.25 0.25 0.25 0.25" position="0 0.36 0" rotation="-90" static-body></a-entity>
         </a-entity>
-        
         <a-entity dynamic-body="shape: cylinder; cylinderAxis: y; mass: 5" position="4.313 0.513 -3.912">
                 <a-entity id="test-wine-bottle" obj-model="obj: #test-wine-bottle-model; mtl: #test-wine-bottle-mtl" scale="0.4 0.4 0.4 0.4" rotation="0" ></a-entity>
         </a-entity>
         <a-entity id="dessert-tray" obj-model="obj: #dessert-tray-model; mtl: #dessert-tray-mtl" scale="0.4 0.4 0.4 0.4" position="4.321 0.299 -4.000" rotation="0" dynamic-body></a-entity>
- 
+       
+        <!--UI-->
         <a-image src="#ui-choose-your-mood-img" position="3.5 0.863 -3.912" scale="0.3 0.1 1" rotation="0 -90 0"  ></a-image>
-        
+        <!--music-->
         <a-entity id="music" geometry="primitive: box" material="src: #speaker" rotation="90" position="1 0.3 1" scale="0.25 0.25 0.25" sound="src: #heavn-mp3; on: click; loop: true;"></a-entity>
-  
+        <!--light-->
         <a-light type="ambient" color="#666" position="" rotation="" scale="" visible="" light=""></a-light>
         <a-light type="point" intensity="" position="-1 4 -4" rotation="" scale="" visible="" light=""></a-light>
-      
+        <!--camera-->
         <a-entity id="camera" camera position="3.124 0.7 -3.945" rotation="0 -90" speed="0.1" look-controls wasd-controls="fly: true; acceleration: 10;"></a-entity>
+   
     </a-scene>
 </body>
 </html>
