@@ -24,6 +24,7 @@
     "aframe-physics-system": "^4.0.1",
     "express": "^4.17.1",
     "heroku": "^7.56.0",
+    "howler": "^2.2.3",
     "if-env": "^1.0.4",
     "nodemon": "^2.0.9",
     "package.json": "^2.0.1",
