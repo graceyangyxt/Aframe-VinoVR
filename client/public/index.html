@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VinoVR | AFrame</title>
+    <link rel="icon" type="image/gif" href="../../favicon.ico" />
 
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="client/src/index.js"></script>
@@ -20,7 +21,7 @@
                 <img id="sky" src="client/src/images/sunset_360_preview.jpg">
                 <img id="grass" src="client/src/images/grass.jpg">
                 <img id="speaker" src="client/src/images/speaker.jpg">
-                <audio id="heavn-mp3" src="client/src/audio/heavn-jamila-woods.mp3" preload="auto"></audio>
+                <audio id="ambience" src="client/src/audio/ambience.mp3"></audio>
                 <a-asset-item id="villa-model" src="client/src/3D-models/villa/villa-obj.obj"></a-asset-item>
                 <a-asset-item id="villa-mtl" src="client/src/3D-models/villa/villa-mtl.mtl"></a-asset-item>
                 <a-asset-item id="test-wine-bottle-model" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.obj"></a-asset-item>
@@ -37,6 +38,8 @@
         </a-assets>
 
         <audio id="music"></audio>
+
+        <a-entity sound="src: #ambience; autoplay: true; loop: true; volume: 3"></a-entity>
 
         <a-sky id="skybox" src="#sky" radius="30" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
         <!--try to figure out the physics, but not yet-->
