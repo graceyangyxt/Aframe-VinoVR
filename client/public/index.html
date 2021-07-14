@@ -27,6 +27,11 @@
                 <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item>
                
                 <img id="ui-choose-your-mood-img" src="client/src/UI/1.png">
+                <img id="ui-happy-img" src="client/src/UI/happy.png">
+                <img id="ui-relax-img" src="client/src/UI/relax.png">
+                <img id="ui-sexy-img" src="client/src/UI/sexy.png">
+                <img id="ui-stress-img" src="client/src/UI/stress.png">
+
         </a-assets>
 
         <a-sky id="skybox" src="#sky" radius="30" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
@@ -41,7 +46,12 @@
         <a-entity id="dessert-tray" obj-model="obj: #dessert-tray-model; mtl: #dessert-tray-mtl" scale="0.4 0.4 0.4 0.4" position="4.321 0.299 -4.000" rotation="0" dynamic-body></a-entity>
        
         <!--UI-->
-        <a-image src="#ui-choose-your-mood-img" position="3.5 0.863 -3.912" scale="0.3 0.1 1" rotation="0 -90 0"  ></a-image>
+        <a-image src="#ui-choose-your-mood-img" position="3.5 0.863 -3.890" scale="0.39 0.13 1" rotation="0 -90 0"  ></a-image>
+        <a-image src="#ui-happy-img" position="3.5 0.743 -4.042" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+        <a-image src="#ui-relax-img" position="3.5 0.743 -3.942" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+        <a-image src="#ui-sexy-img" position="3.5 0.743 -3.842" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+        <a-image src="#ui-stress-img" position="3.5 0.743 -3.742" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+
         <!--music-->
         <a-entity id="music" geometry="primitive: box" material="src: #speaker" rotation="90" position="1 0.3 1" scale="0.25 0.25 0.25" sound="src: #heavn-mp3; on: click; loop: true;"></a-entity>
         <!--light-->
