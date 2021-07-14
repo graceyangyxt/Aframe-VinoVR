@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VinoVR | AFrame</title>
-    <link rel="icon" type="image/gif" href="../../favicon.ico" />
+    <link rel="icon" type="image/gif" href="client/src/images/favicon.gif" />
 
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="client/src/index.js"></script>
@@ -18,42 +18,47 @@
     <a-scene class="fullscreen" loading-screen="dotsColor: white; backgroundColor: purple" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
 
         <a-assets>
-                <img id="sky" src="client/src/images/sunset_360_preview.jpg">
-                <img id="grass" src="client/src/images/grass.jpg">
-                <img id="speaker" src="client/src/images/speaker.jpg">
-                <audio id="ambience" src="client/src/audio/ambience.mp3"></audio>
-                <a-asset-item id="villa-model" src="client/src/3D-models/villa/villa-obj.obj"></a-asset-item>
-                <a-asset-item id="villa-mtl" src="client/src/3D-models/villa/villa-mtl.mtl"></a-asset-item>
-                <a-asset-item id="test-wine-bottle-model" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.obj"></a-asset-item>
-                <a-asset-item id="test-wine-bottle-mtl" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.mtl"></a-asset-item>
-                <a-asset-item id="dessert-tray-model" src="client/src/3D-models/dessert_tray/dessert_tray.obj"></a-asset-item>
-                <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item>
-               
-                <img id="ui-choose-your-mood-img" src="client/src/images/UI/1.png">
-                <img id="ui-happy-img" src="client/src/images/UI/happy.png">
-                <img id="ui-relax-img" src="client/src/images/UI/relax.png">
-                <img id="ui-sexy-img" src="client/src/images/UI/sexy.png">
-                <img id="ui-stress-img" src="client/src/images/UI/stress.png">
-
+            <!--scenery assets-->
+            <img id="sky" src="client/src/images/sunset_360_preview.jpg">
+            <img id="grass" src="client/src/images/grass.jpg">
+            <!--sounds-->
+            <audio id="ambience" src="client/src/audio/ambience.mp3"></audio>
+            <!--3D models-->
+            <a-asset-item id="villa-model" src="client/src/3D-models/villa/villa-obj.obj"></a-asset-item>
+            <a-asset-item id="villa-mtl" src="client/src/3D-models/villa/villa-mtl.mtl"></a-asset-item>
+            <a-asset-item id="test-wine-bottle-model" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.obj"></a-asset-item>
+            <a-asset-item id="test-wine-bottle-mtl" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.mtl"></a-asset-item>
+            <a-asset-item id="dessert-tray-model" src="client/src/3D-models/dessert_tray/dessert_tray.obj"></a-asset-item>
+            <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item>
+            <!--UI assets-->
+            <img id="ui-choose-your-mood-img" src="client/src/images/UI/1.png">
+            <img id="ui-happy-img" src="client/src/images/UI/happy.png">
+            <img id="ui-relax-img" src="client/src/images/UI/relax.png">
+            <img id="ui-sexy-img" src="client/src/images/UI/sexy.png">
+            <img id="ui-stress-img" src="client/src/images/UI/stress.png">
         </a-assets>
 
+        <!--sounds-->
         <audio id="music"></audio>
 
         <a-entity sound="src: #ambience; autoplay: true; loop: true; volume: 3"></a-entity>
 
+        <!--scenery-->
         <a-sky id="skybox" src="#sky" radius="30" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
-        <!--try to figure out the physics, but not yet-->
+
         <a-entity id="ground" geometry="primitive: plane" material="src:#grass; repeat: 150 150" rotation="-90 0 0" scale="100 100" static-body></a-entity>
-      
+
         <a-entity static-body>
                 <a-entity id="villa" obj-model="obj: #villa-model; mtl: #villa-mtl" scale="0.25 0.25 0.25 0.25" position="0 0.36 0" rotation="-90" static-body></a-entity>
         </a-entity>
+
+        <!--small objects-->
         <a-entity dynamic-body="shape: cylinder; cylinderAxis: y; mass: 5" position="4.313 0.513 -3.912">
                 <a-entity id="test-wine-bottle" obj-model="obj: #test-wine-bottle-model; mtl: #test-wine-bottle-mtl" scale="0.4 0.4 0.4 0.4" rotation="0" ></a-entity>
         </a-entity>
-      
+
         <a-entity id="dessert-tray" obj-model="obj: #dessert-tray-model; mtl: #dessert-tray-mtl" scale="0.4 0.4 0.4 0.4" position="4.321 0.299 -4.000" rotation="0" dynamic-body></a-entity>
-       
+
         <!--UI-->
         <a-image src="#ui-choose-your-mood-img" position="3.5 0.863 -3.810" scale="0.39 0.13 1" rotation="0 -90 0"  ></a-image>
         <a-image id="happyBtn" class="clickable" src="#ui-happy-img" position="3.5 0.743 -3.962" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
@@ -61,10 +66,12 @@
         <a-image id="sexyBtn" class="clickable" src="#ui-sexy-img" position="3.5 0.743 -3.762" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
         <a-image id="sadBtn" class="clickable" src="#ui-stress-img" position="3.5 0.743 -3.662" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
 
-        
-        <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: plane" material="color: green" position="3.5 0.65 -3.712" rotation="0 -90" scale="0.05 0.05 0.05"></a-entity>
-        <a-entity id="playBtn" class="clickable" cursor-listener geometry="primitive: plane" material="color: red" position="3.5 0.65 -3.812" rotation="0 -90" scale="0.05 0.05 0.05"></a-entity>
-        <a-entity id="prevBtn" class="clickable" cursor-listener geometry="primitive: plane" material="color: green" position="3.5 0.65 -3.912" rotation="0 -90" scale="0.05 0.05 0.05"></a-entity>
+        <!--music controls-->
+        <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: cone" material="color: green" position="3.5 0.65 -3.697" rotation="0 -90 -90" scale="0.022 0.05 0.022"></a-entity>
+        <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: cone" material="color: green" position="3.5 0.65 -3.722" rotation="0 -90 -90" scale="0.025 0.05 0.025"></a-entity>
+        <a-entity id="playBtn" class="clickable" cursor-listener geometry="primitive: sphere" material="color: red" position="3.5 0.65 -3.812" rotation="0 -90" scale="0.025 0.025 0.025"></a-entity>
+        <a-entity id="prevBtn" class="clickable" cursor-listener geometry="primitive: cone" material="color: green" position="3.5 0.65 -3.902" rotation="0 -90 90" scale="0.025 0.05 0.025"></a-entity>
+        <a-entity id="prevBtn" class="clickable" cursor-listener geometry="primitive: cone" material="color: green" position="3.5 0.65 -3.927" rotation="0 -90 90" scale="0.022 0.05 0.022"></a-entity>
 
         <!--light-->
         <a-light type="ambient" color="#666" position="" rotation="" scale="" visible="" light=""></a-light>
