@@ -7,13 +7,10 @@
     <title>VinoVR | AFrame</title>
 
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-<<<<<<< HEAD
     <script src="client/src/index.js"></script>
-=======
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
->>>>>>> ab3d2ba311c48b2d2e67aa3a9f31b731bc19f544
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -33,6 +30,8 @@
 
         </a-assets>
 
+        <audio id="music"></audio>
+
         <a-sky id="skybox" src="#sky" radius="30" position="" rotation="" scale="" visible="" material="" geometry=""></a-sky>
       
         <a-entity id="ground" geometry="primitive:plane" material="src:#grass; repeat: 150 150" rotation="-90 0 0" scale="100 100" static-body></a-entity>
@@ -47,8 +46,8 @@
       
         <a-entity id="dessert-tray" obj-model="obj: #dessert-tray-model; mtl: #dessert-tray-mtl" scale="0.4 0.4 0.4 0.4" position="4.321 0.299 -4.000" rotation="0" dynamic-body></a-entity>
       
-        <a-entity id="playBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.945" rotation="-5 -90" scale="0.15 0.15 0.15"><audio></audio></a-entity>
-        <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.5" rotation="-5 -90" scale="0.15 0.15 0.15"><audio></audio></a-entity>
+        <a-entity id="playBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.945" rotation="-5 -90" scale="0.15 0.15 0.15"></a-entity>
+        <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.5" rotation="-5 -90" scale="0.15 0.15 0.15"></a-entity>
   
         <a-light type="ambient" color="#666" position="" rotation="" scale="" visible="" light=""></a-light>
         <a-light type="point" intensity="" position="-1 4 -4" rotation="" scale="" visible="" light=""></a-light>
