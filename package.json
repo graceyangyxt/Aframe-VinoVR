@@ -27,7 +27,6 @@
     "howler": "^2.2.3",
     "if-env": "^1.0.4",
     "nodemon": "^2.0.9",
-    "package.json": "^2.0.1",
     "super-hands": "^3.0.2",
     "three": "^0.130.0",
     "ytube-api": "^1.4.5"

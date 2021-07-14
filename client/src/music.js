@@ -62,6 +62,18 @@ function nextRelax() {
     playSound();
 };
 
+function prevRelax() {
+    if (i === 0) {
+        i = 0;
+    } else {
+        i--;
+    }
+
+    music.src = relax[i];
+
+    playSound();
+};
+
 //Sexy functions
 function playSexy() {
     if (playlist === "sexy") {
@@ -86,6 +98,18 @@ function nextSexy() {
     playSound();
 };
 
+function prevSexy() {
+    if (i === 0) {
+        i = 0;
+    } else {
+        i--;
+    }
+
+    music.src = sexy[i];
+
+    playSound();
+};
+
 //Happy functions
 function playHappy() {
     if (playlist === "happy") {
@@ -103,6 +127,18 @@ function nextHappy() {
         i = 0;
     } else {
         i++;
+    }
+
+    music.src = happy[i];
+
+    playSound();
+};
+
+function prevHappy() {
+    if (i === 0) {
+        i = 0;
+    } else {
+        i--;
     }
 
     music.src = happy[i];
@@ -135,6 +171,18 @@ function nextSexy() {
     playSound();
 };
 
+function prevSad() {
+    if (i === 0) {
+        i = 0;
+    } else {
+        i--;
+    }
+
+    music.src = sad[i];
+
+    playSound();
+};
+
 //Next functions
 function next() {
     if (playlist === "relax") {
@@ -150,6 +198,20 @@ function next() {
     console.log('Next song is playing!');
 };
 
+function prev() {
+    if (playlist === "relax") {
+        prevRelax();
+    } else if (playlist === "sexy") {
+        prevSexy();
+    } else if (playlist === "happy") {
+        prevHappy();
+    } else {
+        prevSad();
+    };
+
+    console.log('Previous song is playing!');
+};
+
 //Event listeners
 music.addEventListener('ended', function() {
     next();
@@ -158,6 +220,11 @@ music.addEventListener('ended', function() {
 nextBtn.addEventListener('click', function() {
     console.log('Next was clicked!');
     next();
+});
+
+prevBtn.addEventListener('click', function() {
+    console.log('Previous was clicked!');
+    prev();
 });
 
 relaxBtn.addEventListener('click', function() {
