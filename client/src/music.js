@@ -1,13 +1,14 @@
 //Music values
 var i = 0;
 var playlist ='';
-// const music = document.querySelector('#audio');
+console.log(playlist);
 
 //Buttons
 const relaxBtn = document.querySelector('#relaxBtn');
 const sexyBtn = document.querySelector('#sexyBtn');
 const happyBtn = document.querySelector('#happyBtn');
 const sadBtn = document.querySelector('#sadBtn');
+const playBtn = document.querySelector('#playBtn')
 const nextBtn = document.querySelector('#nextBtn');
 
 //Playlist arrays
@@ -213,18 +214,36 @@ function prev() {
 };
 
 //Event listeners
-music.addEventListener('ended', function() {
-    next();
+music.addEventListener('ended', next);
+
+playBtn.addEventListener('click', function() {
+    console.log('Play was clicked!');
+    if (playlist === '') {
+        alert('Please select a mood first!');
+        return;
+    } else {
+        playSound();
+    };
 });
 
 nextBtn.addEventListener('click', function() {
     console.log('Next was clicked!');
-    next();
+    if (playlist === '') {
+        alert('Please select a mood first!');
+        return;
+    } else {
+        next();
+    };
 });
 
 prevBtn.addEventListener('click', function() {
     console.log('Previous was clicked!');
-    prev();
+    if (playlist === '') {
+        alert('Please select a mood first!');
+        return;
+    } else {
+        prev();
+    };
 });
 
 relaxBtn.addEventListener('click', function() {
