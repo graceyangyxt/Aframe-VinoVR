@@ -1,42 +1,82 @@
 //Music values
 var i = 0;
 var playlist ='';
-console.log(playlist);
 
 //Buttons
 const relaxBtn = document.querySelector('#relaxBtn');
 const sexyBtn = document.querySelector('#sexyBtn');
 const happyBtn = document.querySelector('#happyBtn');
 const sadBtn = document.querySelector('#sadBtn');
-const playBtn = document.querySelector('#playBtn')
+const playBtn = document.querySelector('#playBtn');
 const nextBtn = document.querySelector('#nextBtn');
+const prevBtn = document.querySelector('#prevBtn');
 
 //Playlist arrays
 var relax = [
     "client/src/audio/girl-from-ipanema.mp3",
     "client/src/audio/heavn-jamila-woods.mp3",
-    "client/src/audio/pink+white.mp3"
+    "client/src/audio/pink+white.mp3",
+    "client/src/audio/i-like-that.mp3",
+    "client/src/audio/woman-in-mirror.mp3",
+    "client/src/audio/4ever.mp3",
+    "client/src/audio/japanese-denim.mp3",
+    "client/src/audio/la-thune.mp3",
+    "client/src/audio/boredom.mp3",
+    "client/src/audio/the-weekend-funk-wav.mp3",
 ];
 
 var sexy = [
     "client/src/audio/at-last.mp3",
+    "client/src/audio/best-part.mp3",
+    "client/src/audio/collide.mp3",
+    "client/src/audio/telepatia.mp3",
+    "client/src/audio/fantasy.mp3",
+    "client/src/audio/get-lucky.mp3",
+    "client/src/audio/experience.mp3",
+    "client/src/audio/i-wanna-be-yours.mp3",
+    "client/src/audio/.mp3",
+    "client/src/audio/bood-up.mp3",
 ];
 
 var happy = [
-    "client/src/audio/dance-alone.mp3"
+    "client/src/audio/dance-alone.mp3",
+    "client/src/audio/good-as-hell.mp3",
+    "client/src/audio/levitating.mp3",
+    "client/src/audio/comme-des-garcons.mp3",
+    "client/src/audio/glitter.mp3",
+    "client/src/audio/good-thing.mp3",
+    "client/src/audio/music-sounds-better-with-you.mp3",
+    "client/src/audio/tongue-tied.mp3",
+    "client/src/audio/10-10.mp3",
+    "client/src/audio/dancing-on-my-own.mp3"
 ];
 
 var sad = [
-    "client/src/audio/let-me-down.mp3"
+    "client/src/audio/let-me-down.mp3",
+    "client/src/audio/reminders.mp3",
+    "client/src/audio/y-u-gotta-be-like-that.mp3",
+    "client/src/audio/sorry.mp3",
+    "client/src/audio/orbit.mp3",
+    "client/src/audio/lonely.mp3",
+    "client/src/audio/good-news.mp3",
+    "client/src/audio/somebody-else.mp3",
+    "client/src/audio/circles.mp3",
+    "client/src/audio/pretty-hurts.mp3"
 ];
 
 //Play.Pause function
 function playSound() {
     if (music.paused) {
         music.play();
+        playBtn.setAttribute('geometry',{primitive: 'box'});
+        playBtn.setAttribute('scale','0.04 0.04 0.04 0.04');
+        playBtn.setAttribute('material',{color: 'red'});
     } else {
         music.pause();
-    }
+        playBtn.setAttribute('geometry',{primitive: 'sphere'});
+        playBtn.setAttribute('scale','0.025 0.025 0.025 0.025');
+        playBtn.setAttribute('material',{color: 'green'});
+    };
 };
 
 //Chill functions
@@ -184,7 +224,7 @@ function prevSad() {
     playSound();
 };
 
-//Next functions
+//Next/previous functions
 function next() {
     if (playlist === "relax") {
         nextRelax();
