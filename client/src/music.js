@@ -200,7 +200,7 @@ function playSad() {
     };
 };
 
-function nextSexy() {
+function nextSad() {
     if (i === sexy.length - 1) {
         i = 0;
     } else {

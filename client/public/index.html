@@ -21,6 +21,8 @@
             <!--scenery assets-->
             <img id="sky" src="client/src/images/sunset_360_preview.jpg">
             <img id="grass" src="client/src/images/grass.jpg">
+            <img id="forest" src="client/src/images/forest.png">
+            <img id="foliage" src="client/src/images/foliage.png">
             <!--sounds-->
             <audio id="ambience" src="client/src/audio/ambience.mp3"></audio>
             <!--3D models-->
@@ -30,6 +32,8 @@
             <a-asset-item id="test-wine-bottle-mtl" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.mtl"></a-asset-item>
             <a-asset-item id="dessert-tray-model" src="client/src/3D-models/dessert_tray/dessert_tray.obj"></a-asset-item>
             <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item>
+            <a-asset-item id="small-bush-obj" src="client/src/3D-models/small-bush/small-bush.obj"></a-asset-item>
+            <a-asset-item id="small-bush-mtl" src="client/src/3D-models/small-bush/small-bush.mtl"></a-asset-item>
             <!--UI assets-->
             <img id="ui-choose-your-mood-img" src="client/src/images/UI/1.png">
             <img id="ui-happy-img" src="client/src/images/UI/happy.png">
@@ -49,7 +53,13 @@
         <a-entity id="ground" geometry="primitive: plane" material="src:#grass; repeat: 150 150" rotation="-90 0 0" scale="100 100" static-body></a-entity>
 
         <a-entity static-body>
-                <a-entity id="villa" obj-model="obj: #villa-model; mtl: #villa-mtl" scale="0.25 0.25 0.25 0.25" position="0 0.36 0" rotation="-90" static-body></a-entity>
+            <a-entity id="villa" obj-model="obj: #villa-model; mtl: #villa-mtl" scale="0.25 0.25 0.25 0.25" position="0 0.36 0" rotation="-90" static-body></a-entity>
+        </a-entity>
+
+        <a-image class="forest" geometry="width: 2" scale="2 2 2" material="src: #forest" rotation="0 -99.76283833038381 0"></a-image>
+            <a-entity id="small-bush" obj-model="obj: #small-bush-obj; mtl: #small-bush-mtl; transparent: true;" scale="0.25 0.25 0.25 0.25"></a-entity>
+        <a-entity static-body>
+
         </a-entity>
 
         <!--small objects-->
