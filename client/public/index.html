@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VinoVR | AFrame</title>
 
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="client/src/index.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/super-hands@^3.0.1/dist/super-hands.min.js"></script>
@@ -15,7 +14,7 @@
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <a-scene class="fullscreen" cursor="rayOrigin: mouse" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
+    <a-scene class="fullscreen" loading-screen="dotsColor: white; backgroundColor: purple" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
 
         <a-assets>
                 <img id="sky" src="client/src/images/sunset_360_preview.jpg">
@@ -68,9 +67,10 @@
         <a-light type="point" intensity="" position="-1 4 -4" rotation="" scale="" visible="" light=""></a-light>
 
         <!--camera-->
-        <a-entity id="camera" camera position="3.124 0.7 -3.81" rotation="0 -90" speed="0.1" look-controls mouse-cursor wasd-controls="fly: true; acceleration: 10;">
-            <!-- <a-entity cursor="fuse: false"  position="0 0 -0.05"   geometry="primitive:ring; radiusInner: 0.0006; radiusOuter: 0.001"  material="color: #606; shader: flat"></a-ring> -->
-        </a-entity>
+        <a-camera id="camera" position="3.124 0.7 -3.81" rotation="0 0 -90" speed="0.01" look-controls="pointerLockEnabled: true" mouse-cursor wasd-controls="fly: true; acceleration: 3;">
+            <!-- <a-entity cursor="fuse: false; rayOrigin: mouse"  position="0 0 -0.05"></a-ring> -->
+            <a-entity cursor="fuse: false"  position="0 0 -0.05" geometry="primitive:ring; radiusInner: 0.0006; radiusOuter: 0.001"  material="color: #606; shader: flat"></a-ring>
+        </a-camera>
     </a-scene>
 </body>
     <script src="client/src/music.js"></script>
