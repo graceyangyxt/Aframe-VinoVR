@@ -1,11 +1,17 @@
-const chillBtn = document.querySelector('#playBtn');
-const nextBtn = document.querySelector('#nextBtn');
-
+//Music values
 var i = 0;
 var playlist ='';
+// const music = document.querySelector('#audio');
+
+//Buttons
+const relaxBtn = document.querySelector('#relaxBtn');
+const sexyBtn = document.querySelector('#sexyBtn');
+const happyBtn = document.querySelector('#happyBtn');
+const sadBtn = document.querySelector('#sadBtn');
+const nextBtn = document.querySelector('#nextBtn');
 
 //Playlist arrays
-var chill = [
+var relax = [
     "client/src/audio/girl-from-ipanema.mp3",
     "client/src/audio/heavn-jamila-woods.mp3",
     "client/src/audio/pink+white.mp3"
@@ -33,27 +39,25 @@ function playSound() {
 };
 
 //Chill functions
-function playChill() {
-    if (playlist === "chill") {
+function playRelax() {
+    if (playlist === "relax") {
         return;
     } else {
-    i = 0;
-    playlist = "chill";
-    music.src = chill[i];
-    playSound();
+        i = 0;
+        playlist = "relax";
+        music.src = relax[i];
+        playSound();
     };
 };
 
-function nextChill() {
-    if (i === chill.length - 1) {
+function nextRelax() {
+    if (i === relax.length - 1) {
         i = 0;
     } else {
         i++;
     }
 
-    music.src = chill[i];
-
-    console.log('Next song is playing!');
+    music.src = relax[i];
 
     playSound();
 };
@@ -63,10 +67,10 @@ function playSexy() {
     if (playlist === "sexy") {
         return;
     } else {
-    i = 0;
-    playlist = "sexy";
-    music.src = sexy[i];
-    playSound();
+        i = 0;
+        playlist = "sexy";
+        music.src = sexy[i];
+        playSound();
     };
 }
 
@@ -79,8 +83,6 @@ function nextSexy() {
 
     music.src = sexy[i];
 
-    console.log('Next song is playing!');
-
     playSound();
 };
 
@@ -89,10 +91,10 @@ function playHappy() {
     if (playlist === "happy") {
         return;
     } else {
-    i = 0;
-    playlist = "happy";
-    music.src = happy[i];
-    playSound();
+        i = 0;
+        playlist = "happy";
+        music.src = happy[i];
+        playSound();
     };
 }
 
@@ -105,8 +107,6 @@ function nextHappy() {
 
     music.src = happy[i];
 
-    console.log('Next song is playing!');
-
     playSound();
 };
 
@@ -116,10 +116,10 @@ function playSad() {
     if (playlist === "sad") {
         return;
     } else {
-    i = 0;
-    playlist = "sad";
-    music.src = sad[i];
-    playSound();
+        i = 0;
+        playlist = "sad";
+        music.src = sad[i];
+        playSound();
     };
 };
 
@@ -132,15 +132,13 @@ function nextSexy() {
 
     music.src = sexy[i];
 
-    console.log('Next song is playing!');
-
     playSound();
 };
 
 //Next functions
 function next() {
-    if (playlist === "chill") {
-        nextChill();
+    if (playlist === "relax") {
+        nextRelax();
     } else if (playlist === "sexy") {
         nextSexy();
     } else if (playlist === "happy") {
@@ -148,20 +146,36 @@ function next() {
     } else {
         nextSad();
     };
+
+    console.log('Next song is playing!');
 };
 
 //Event listeners
 music.addEventListener('ended', function() {
     next();
-    console.log('Next song is playing!');
 });
 
 nextBtn.addEventListener('click', function() {
-    next();
     console.log('Next was clicked!');
+    next();
 });
 
-chillBtn.addEventListener('click', function() {
-    playChill();
-    console.log('Play/Pause was clicked!');
+relaxBtn.addEventListener('click', function() {
+    playRelax();
+    console.log('Playing the relax playlist!');
+});
+
+sexyBtn.addEventListener('click', function() {
+    playSexy();
+    console.log('Playing the sexy playlist!');
+});
+
+happyBtn.addEventListener('click', function() {
+    playHappy();
+    console.log('Playing the happy playlist!');
+});
+
+sadBtn.addEventListener('click', function() {
+    playSad();
+    console.log('Playing the sad playlist!');
 });

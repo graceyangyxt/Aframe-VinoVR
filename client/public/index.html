@@ -14,7 +14,7 @@
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <a-scene physics="gravity:-9.8" class="fullscreen" loading-screen="dotsColor: purple; backgroundColor: black" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="" stats>
+    <a-scene physics="gravity:-9.8" class="fullscreen" loading-screen="dotsColor: purple; backgroundColor: black" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" auto-enter-vr="">
 
         <a-assets>
                 <img id="sky" src="client/src/images/sunset_360_preview.jpg">
@@ -28,11 +28,11 @@
                 <a-asset-item id="dessert-tray-model" src="client/src/3D-models/dessert_tray/dessert_tray.obj"></a-asset-item>
                 <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item>
                
-                <img id="ui-choose-your-mood-img" src="client/src/UI/1.png">
-                <img id="ui-happy-img" src="client/src/UI/happy.png">
-                <img id="ui-relax-img" src="client/src/UI/relax.png">
-                <img id="ui-sexy-img" src="client/src/UI/sexy.png">
-                <img id="ui-stress-img" src="client/src/UI/stress.png">
+                <img id="ui-choose-your-mood-img" src="client/src/images/UI/1.png">
+                <img id="ui-happy-img" src="client/src/images/UI/happy.png">
+                <img id="ui-relax-img" src="client/src/images/UI/relax.png">
+                <img id="ui-sexy-img" src="client/src/images/UI/sexy.png">
+                <img id="ui-stress-img" src="client/src/images/UI/stress.png">
 
         </a-assets>
 
@@ -53,20 +53,22 @@
        
         <!--UI-->
         <a-image src="#ui-choose-your-mood-img" position="3.5 0.863 -3.890" scale="0.39 0.13 1" rotation="0 -90 0"  ></a-image>
-        <a-image src="#ui-happy-img" position="3.5 0.743 -4.042" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
-        <a-image src="#ui-relax-img" position="3.5 0.743 -3.942" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
-        <a-image src="#ui-sexy-img" position="3.5 0.743 -3.842" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
-        <a-image src="#ui-stress-img" position="3.5 0.743 -3.742" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+        <a-image id="happyBtn" class="clickable" src="#ui-happy-img" position="3.5 0.743 -4.042" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+        <a-image id="relaxBtn" class="clickable" src="#ui-relax-img" position="3.5 0.743 -3.942" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+        <a-image id="sexyBtn" class="clickable" src="#ui-sexy-img" position="3.5 0.743 -3.842" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
+        <a-image id="sadBtn" class="clickable" src="#ui-stress-img" position="3.5 0.743 -3.742" scale="0.07 0.07 1" rotation="0 -90 0"  ></a-image>
 
         <!--light-->
         <a-light type="ambient" color="#666" position="" rotation="" scale="" visible="" light=""></a-light>
         <a-light type="point" intensity="" position="-1 4 -4" rotation="" scale="" visible="" light=""></a-light>
-      
-        <a-entity id="playBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.945" rotation="-5 -90" scale="0.15 0.15 0.15"></a-entity>
-        <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: plane" material="src: #speaker" position="3.8 0.6 -3.5" rotation="-5 -90" scale="0.15 0.15 0.15"></a-entity>
+
+        <!--next button-->
+        <a-entity id="nextBtn" class="clickable" cursor-listener text="value: Next; width: 5; color:#697; anchor: left;" geometry="primitive: plane" position="3.8 0.6 -3.5" rotation="-5 -90" scale="0.15 0.15 0.15"></a-entity>
       
         <!--camera-->
-        <a-entity id="camera" camera position="3.124 0.7 -3.945" rotation="0 -90" speed="0.1" look-controls wasd-controls="fly: true; acceleration: 10;"><a-cursor position="0 0 -0.1" material="color: white;" raycaster="far: 20; interval: 1000; objects: .clickable"></a-cursor></a-entity>
+        <a-entity id="camera" camera position="3.124 0.7 -3.945" rotation="0 -90" speed="0.1" look-controls wasd-controls="fly: true; acceleration: 10;">
+            <a-entity cursor="fuse: false"  position="0 0 -1"   geometry="primitive:ring; radiusInner: 0.01; radiusOuter: 0.02"  material="color: white; shader: flat"></a-ring>
+        </a-entity>
     </a-scene>
 </body>
     <script src="client/src/music.js"></script>
