@@ -235,8 +235,6 @@ function next() {
     } else {
         nextSad();
     };
-
-    console.log('Next song is playing!');
 };
 
 function prev() {
@@ -249,25 +247,27 @@ function prev() {
     } else {
         prevSad();
     };
-
-    console.log('Previous song is playing!');
 };
 
 //Event listeners
 music.addEventListener('ended', next);
 
 playBtn.addEventListener('click', function() {
-    console.log('Play was clicked!');
     if (playlist === '') {
         alert('Please select a mood first!');
         return;
     } else {
+        if (music.paused) {
+            console.log('Playing music!');
+        } else {
+        console.log('Pausing music!');
+        }
         playSound();
     };
 });
 
 nextBtn.addEventListener('click', function() {
-    console.log('Next was clicked!');
+    console.log('Next song playing!');
     if (playlist === '') {
         alert('Please select a mood first!');
         return;
@@ -277,7 +277,7 @@ nextBtn.addEventListener('click', function() {
 });
 
 prevBtn.addEventListener('click', function() {
-    console.log('Previous was clicked!');
+    console.log('Previous song playing!');
     if (playlist === '') {
         alert('Please select a mood first!');
         return;
