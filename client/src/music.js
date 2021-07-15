@@ -1,4 +1,4 @@
-//Music values
+//Music variables
 var i = 0;
 var playlist ='';
 
@@ -41,12 +41,10 @@ var happy = [
 
 var sad = [
     "client/src/audio/let-me-down.mp3",
-    "client/src/audio/reminders.mp3",
     "client/src/audio/orbit.mp3",
     "client/src/audio/lonely.mp3",
     "client/src/audio/good-news.mp3",
     "client/src/audio/somebody-else.mp3",
-    "client/src/audio/circles.mp3",
     "client/src/audio/pretty-hurts.mp3"
 ];
 
@@ -82,7 +80,7 @@ function nextRelax() {
         i = 0;
     } else {
         i++;
-    }
+    };
 
     music.src = relax[i];
 
@@ -94,7 +92,7 @@ function prevRelax() {
         i = 0;
     } else {
         i--;
-    }
+    };
 
     music.src = relax[i];
 
@@ -118,7 +116,7 @@ function nextSexy() {
         i = 0;
     } else {
         i++;
-    }
+    };
 
     music.src = sexy[i];
 
@@ -147,7 +145,7 @@ function playHappy() {
         music.src = happy[i];
         playSound();
     };
-}
+};
 
 function nextHappy() {
     if (i === happy.length - 1) {
@@ -203,7 +201,7 @@ function prevSad() {
         i = 0;
     } else {
         i--;
-    }
+    };
 
     music.src = sad[i];
 
