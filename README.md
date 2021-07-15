@@ -3,7 +3,7 @@
 ![picture](client/src/images/aframescreenshot.png)
 
 <p align="center">
-A browser-based VR experience that allows you to find new wines to try or enjoy your own in a scenic Mediterranean villa, with music that matches your mood. This is an extension of our portal site
+A browser-based VR experience that allows you to find new wines to try or enjoy your own in a scenic Mediterranean villa, with music that matches your mood. This is an extension of our portal site.
 </p>
 
 <p align="center">
@@ -41,10 +41,10 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Authors
 
-Grace Yang
-Sean Weber
-Giselle Raposo
-Luis Apuango
+- Grace Yang
+- Sean Weber
+- Giselle Raposo
+- Luis Apuango
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
