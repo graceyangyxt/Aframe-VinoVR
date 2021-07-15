@@ -1,15 +1,13 @@
 <h1 align="center">VinoVR-Experience</h1> <br>
-<p align="center">
-    <a href="https://vinovr-experience.herokuapp.com">
-        <img alt="VinoVR" title="VinoVR" src="client/src/images/aframescreenshot" width="450px">
-    </a>
-</p>
+
+![picture](client/src/images/aframescreenshot.png)
+
 
 <p align="center">
 A browser-based VR experience that allows you to enjoy a glass of wine, perhaps recommended on our portal site, in a scenic Mediterranean villa, with music that matches your mood.
 </p>
 
-![picture](client/src/images/aframescreenshot.png)
+
 
 ## Table of Contents
 
