@@ -30,8 +30,8 @@
             <a-asset-item id="villa-mtl" src="client/src/3D-models/villa/villa-mtl.mtl"></a-asset-item>
             <a-asset-item id="test-wine-bottle-model" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.obj"></a-asset-item>
             <a-asset-item id="test-wine-bottle-mtl" src="client/src/3D-models/wine_bottle/Wine_Bottle_White.mtl"></a-asset-item>
-            <a-asset-item id="dessert-tray-model" src="client/src/3D-models/dessert_tray/dessert_tray.obj"></a-asset-item>
-            <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item>
+            <!-- <a-asset-item id="dessert-tray-model" src="client/src/3D-models/dessert_tray/dessert_tray.obj"></a-asset-item>
+            <a-asset-item id="dessert-tray-mtl" src="client/src/3D-models/dessert_tray/dessert_tray.mtl"></a-asset-item> -->
             <a-asset-item id="small-bush-obj" src="client/src/3D-models/small-bush/small-bush.obj"></a-asset-item>
             <a-asset-item id="small-bush-mtl" src="client/src/3D-models/small-bush/small-bush.mtl"></a-asset-item>
             <!--UI assets-->
@@ -70,7 +70,7 @@
                 <a-entity id="test-wine-bottle" obj-model="obj: #test-wine-bottle-model; mtl: #test-wine-bottle-mtl" scale="0.4 0.4 0.4 0.4" rotation="0" ></a-entity>
         </a-entity>
 
-        <a-entity id="dessert-tray" obj-model="obj: #dessert-tray-model; mtl: #dessert-tray-mtl" scale="0.4 0.4 0.4 0.4" position="4.321 0.299 -4.000" rotation="0" dynamic-body></a-entity>
+        <!-- <a-entity id="dessert-tray" obj-model="obj: #dessert-tray-model; mtl: #dessert-tray-mtl" scale="0.4 0.4 0.4 0.4" position="4.321 0.299 -4.000" rotation="0" dynamic-body></a-entity> -->
 
         <!--UI-->
         <a-image src="#ui-choose-your-mood-img" position="3.5 0.863 -3.810" scale="0.39 0.13 1" rotation="0 -90 0"  ></a-image>
@@ -81,6 +81,7 @@
         <a-image src="#ui-wine1-img" position="2.642 0.743 -3.669" scale="0.2 0.4 1" rotation="0 100 0"  ></a-image>
         <a-image src="#ui-wine2-img" position="2.630 0.743 -3.886" scale="0.2 0.4 1" rotation="0 90 0"  ></a-image>
         <a-image src="#ui-wine3-img" position="2.642 0.743 -4.106" scale="0.2 0.4 1" rotation="0 80 0"  ></a-image>
+
         <!--music controls-->
         <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: cone" material="color: green" position="3.5 0.65 -3.697" rotation="0 -90 -90" scale="0.022 0.05 0.022"></a-entity>
         <a-entity id="nextBtn" class="clickable" cursor-listener geometry="primitive: cone" material="color: green" position="3.5 0.65 -3.722" rotation="0 -90 -90" scale="0.025 0.05 0.025"></a-entity>
@@ -93,6 +94,7 @@
         <!--light-->
         <a-light type="ambient" color="#666" position="" rotation="" scale="" visible="" light=""></a-light>
         <a-light type="point" intensity="" position="-1 4 -4" rotation="" scale="" visible="" light=""></a-light>
+        
         <!--camera-->
         <a-entity position="3.124 0.7 -3.81" rotation="0 -90 0">
             <!-- <a-entity cursor="fuse: false; rayOrigin: mouse"  position="0 0 -0.05"></a-ring> -->
