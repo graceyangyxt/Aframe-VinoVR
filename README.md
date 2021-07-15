@@ -7,7 +7,7 @@ A browser-based VR experience that allows you to find new wines to try or enjoy 
 </p>
 
 <p align="center">
-    <a href="https://vinovr-experience.herokuapp.com">Go now!</a>
+    <a href="https://vinovr-experience.herokuapp.com">Visit us here!</a>
 </p>
 
 ## Table of Contents
